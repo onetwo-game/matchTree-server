@@ -13,5 +13,6 @@ const { listen } = require("@colyseus/tools");
 // Import arena config
 const app = require("./app.config");
 
+const port = app.options.port || process.env.PORT || 2567;
 // Create and listen on 2567 (or PORT environment variable.)
-listen(app);
+listen(app, port);
