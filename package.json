@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node src/index.js",
+    "prod": "NODE_ENV=production node --watch src/index.js",
     "loadtest": "node loadtest/example.js --room my_room --numClients 2",
     "test": "mocha test/**_test.js --exit --timeout 15000",
     "build": "exit 0"

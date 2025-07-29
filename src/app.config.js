@@ -14,9 +14,6 @@ app.use(express.json());
 const { MyRoom } = require("./rooms/MyRoom");
 
 module.exports = config({
-    options: {
-        port: 80,
-    },
     initializeGameServer: (gameServer) => {
         /**
          * Define your room handlers:

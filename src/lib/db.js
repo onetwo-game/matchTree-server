@@ -5,7 +5,9 @@ const Point = require('../models/Point');
 
 // 连接数据库
 const connectDB = async () => {
-    mongoose.connect("mongodb://localhost:27017/game_data", {
+    
+    const dbUrl = process.env.DB_URL
+    mongoose.connect(dbUrl, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       serverSelectionTimeoutMS: 5000, // 增加超时时间
