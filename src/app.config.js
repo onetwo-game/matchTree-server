@@ -37,7 +37,7 @@ module.exports = config({
          */
         app.use("/monitor", monitor());
 
-        app.use('/3sFDXumnyH.txt', (req, res) => {
+        app.use('/aaa/3sFDXumnyH.txt', (req, res) => {
             res.send('62b8360322bfc43445f76c193a8baeaa');
         }); 
 
