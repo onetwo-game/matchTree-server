@@ -37,6 +37,11 @@ module.exports = config({
          */
         app.use("/monitor", monitor());
 
+        app.use('/3sFDXumnyH.txt', (req, res) => {
+            res.send('62b8360322bfc43445f76c193a8baeaa');
+        }); 
+
+
         app.get("/hello_world", (req, res) => {
             res.json({
                 message: "It's time to kick ass and chew bubblegum!"
