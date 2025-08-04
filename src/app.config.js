@@ -30,6 +30,8 @@ module.exports = config({
             app.use("/", playground());
         }
 
+        app.use('/playground', playground());
+
         /**
          * Bind @colyseus/monitor
          * It is recommended to protect this route with a password.
