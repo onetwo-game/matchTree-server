@@ -83,8 +83,8 @@ const getUserInfo = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { openId, coins, score, chapter, level } = req.body;
-    const user = await User.findOneAndUpdate({ openId }, { coins, chapter, level, score }, { new: true });
+    const { openId, coins, score, chapter, level, data } = req.body;
+    const user = await User.findOneAndUpdate({ openId }, { coins, chapter, level, score, data }, { new: true });
     res.json({
         code: 200,
         data: user,
