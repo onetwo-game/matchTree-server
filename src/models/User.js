@@ -38,6 +38,16 @@ const userSchema = new mongoose.Schema({
     required: true,
     default: 1,
   },
+  score: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
+  data: {
+    type: Object,
+    required: true,
+    default: {},
+  },
 });
 
 const User = mongoose.model('users', userSchema);
