@@ -57,8 +57,21 @@ module.exports = config({
         // 获取用户信息
         app.post('/api/users/getInfo', getUserInfo);
 
-        // 修改用户信息
+        // 改用户信息
         app.post('/api/users/update', updateUser);
+
+        app.post('/api/users/login', async (req, res) => {
+            const { appid, appSecret, jsCode2SessionUrl } = config;
+            const { code } = req.body;
+            const url = `${jsCode2SessionUrl}?appid=${appid}&secret=${appSecret}&js_code=${code}&grant_type=authorization_code`;
+            const response = await fetch(url);
+            const data = await response.json();
+            res.json({
+                code: 200,
+                message: 'success',
+                data: data
+            });
+        });
     },
 
     beforeListen: () => {
