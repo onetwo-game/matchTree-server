@@ -1,6 +1,7 @@
 const config = require("@colyseus/tools").default;
 const { monitor } = require("@colyseus/monitor");
 const { playground } = require("@colyseus/playground");
+const config = require("./config");
 
 const express = require('express');
 const { addUser, addPoint, getUserInfo, updateUser } = require('./lib/db');
