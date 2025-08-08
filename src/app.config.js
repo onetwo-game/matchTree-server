@@ -1,7 +1,7 @@
 const config = require("@colyseus/tools").default;
 const { monitor } = require("@colyseus/monitor");
 const { playground } = require("@colyseus/playground");
-const config = require("./config");
+const systemConfig = require("./config");
 
 const express = require('express');
 const { addUser, addPoint, getUserInfo, updateUser } = require('./lib/db');
@@ -62,7 +62,7 @@ module.exports = config({
         app.post('/api/users/update', updateUser);
 
         app.post('/api/users/login', async (req, res) => {
-            const { appid, appSecret, jsCode2SessionUrl } = config;
+            const { appid, appSecret, jsCode2SessionUrl } = systemConfig;
             const { code } = req.body;
             const url = `${jsCode2SessionUrl}?appid=${appid}&secret=${appSecret}&js_code=${code}&grant_type=authorization_code`;
             const response = await fetch(url);
