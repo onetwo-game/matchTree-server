@@ -1,10 +1,11 @@
 const config = require("@colyseus/tools").default;
 const { monitor } = require("@colyseus/monitor");
 const { playground } = require("@colyseus/playground");
-const { systemConfig } = require("./config");
+const systemConfig  = require("./config");
 
 const express = require('express');
 const { addUser, addPoint, getUserInfo, updateUser } = require('./lib/db');
+
 
 const app = express();
 // 确保使用中间件解析 JSON 请求体
